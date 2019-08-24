@@ -10,6 +10,8 @@ namespace FacebookApp
     {
         public Dictionary<string, int> BestFriendsDict { get; set; }
 
+        public List<Post> UserNewsFeed { get; set; }
+
         public List<User> UserFriendsList { get; set; }
 
         public List<Album> NonEmptyAlbumsList { get; set; }
@@ -18,6 +20,10 @@ namespace FacebookApp
 
         public User LocalUser { get; set; }
 
+        public List<Event> UserEvents { get; set; }
+
+        public List<Page> UserPages { get; set; }
+
         public UserData(User i_User)
         {
             LocalUser = i_User;
@@ -25,6 +31,9 @@ namespace FacebookApp
             UserFriendsList = new List<User>();
             NonEmptyAlbumsList = new List<Album>();
             UserStatusList = new List<Status>();
+            UserNewsFeed = new List<Post>();
+            UserEvents = new List<Event>();
+            UserPages = new List<Page>();
         }
 
         public Dictionary<string, int> OrderDictByValueInt(Dictionary<string, int> i_Dict)
