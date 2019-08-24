@@ -55,6 +55,7 @@ namespace FacebookApp
             else
             {
                 LoginResult = FacebookService.Login(
+                    //"753926335063958",
                     "1450160541956417",
                     "public_profile",
                     "email",
@@ -92,6 +93,24 @@ namespace FacebookApp
             return postedStatus;
         }
 
+
+        public string PostStatusToAllFriendsAdapter(UserData i_UserData, string i_StatusText)
+        {
+            string res = "Posted status successfully on all friends walls";
+            foreach (User currUser in i_UserData.UserFriendsList)
+            {
+                try
+                {
+                    PostStatus(i_StatusText, currUser);
+                }
+                catch (Exception)
+                {
+                    res = "There was error trying to post status";
+                    break;
+                }
+            }
+            return res;
+        }
         private void getAllUserStatus(UserData i_UserData)
         {
             foreach (Status currStatus in i_UserData.LocalUser.Statuses)
