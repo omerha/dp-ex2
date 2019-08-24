@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using C19_Ex01_Omer_204059331_Andrey_321082513.sln;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
@@ -138,12 +139,26 @@ namespace FacebookApp
 
         public void FetchUserData(UserData i_UserData)
         {
+            ThreadStart starter = new ThreadStart(()=>getAllUserFriends(i_UserData));
+            starter += () => {
+                getAllTaggedFriendsFromCheckins(i_UserData);
+                getAllTaggedFriendsFromPhotos(i_UserData);
+            };
+            Thread thread = new Thread(starter) { IsBackground = true };
+            thread.Start();
             getAllTheNoEmptyAlbums(i_UserData);
+            getAllUserStatus(i_UserData);
+        }
+
+  /*      public void FetchUserData(UserData i_UserData)
+        {
+      
             getAllUserFriends(i_UserData);
+            getAllTheNoEmptyAlbums(i_UserData);
             getAllUserStatus(i_UserData);
             getAllTaggedFriendsFromCheckins(i_UserData);
             getAllTaggedFriendsFromPhotos(i_UserData);
-        }
+        }*/
 
         private void getAllTheNoEmptyAlbums(UserData i_UserData)
         {
