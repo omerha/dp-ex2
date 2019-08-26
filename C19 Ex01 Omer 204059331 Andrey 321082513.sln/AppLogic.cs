@@ -120,6 +120,40 @@ namespace FacebookApp
             }
         }
 
+        private void getUserNewsFeed(UserData i_UserData)
+        {
+            if (i_UserData.LocalUser.NewsFeed != null)
+            {
+                foreach (Post post in i_UserData.LocalUser.NewsFeed)
+                {
+                    i_UserData.UserNewsFeed.Add(post);
+                }
+            }
+        }
+
+        private void getUserPages(UserData i_UserData)
+        {
+            if (i_UserData.LocalUser.LikedPages != null)
+            {
+                foreach (Page page in i_UserData.LocalUser.LikedPages)
+                {
+                    i_UserData.UserPages.Add(page);
+                }
+            }
+        }
+        
+
+        private void getUserEvents(UserData i_UserData)
+        {
+            if (i_UserData.LocalUser.Events != null)
+            {
+                foreach (Event userEvent in i_UserData.LocalUser.Events)
+                {
+                    i_UserData.UserEvents.Add(userEvent);
+                }
+            }
+        }
+
         public User FindFriendByName(string i_friendNameToFind, UserData i_UserData)
         {
             User friend = null;
@@ -148,6 +182,9 @@ namespace FacebookApp
             thread.Start();
             getAllTheNoEmptyAlbums(i_UserData);
             getAllUserStatus(i_UserData);
+            getUserNewsFeed(i_UserData);
+            getUserEvents(i_UserData);
+            getUserPages(i_UserData);
         }
 
   /*      public void FetchUserData(UserData i_UserData)
@@ -222,10 +259,18 @@ namespace FacebookApp
                 {
                     if (currPhoto.Tags != null)
                     {
-                        foreach (PhotoTag currPhotoTag in currPhoto.Tags)
+                        try
                         {
-                            collectUsersFromTag(currPhotoTag, i_UserData);
+                            foreach (PhotoTag currPhotoTag in currPhoto.Tags)
+                            {
+                                collectUsersFromTag(currPhotoTag, i_UserData);
+                            }
                         }
+                        catch (Facebook.FacebookOAuthException e)
+                        {
+                            continue;
+                        }
+                    
                     }
                 }
             }
@@ -234,26 +279,33 @@ namespace FacebookApp
         private void getAllTaggedFriendsFromCheckins(UserData i_UserData)
         {
             string currUserNameAsKey = string.Empty;
-            foreach (Checkin currCheckin in i_UserData.LocalUser.Checkins)
-            {
-                foreach (User currUser in currCheckin.TaggedUsers)
-                {
-                    currUserNameAsKey = getUserFullName(currUser);
-                    if (checkIfFriendIsNotLocalUser(i_UserData.LocalUser, currUser)) 
-                    {
-                        continue;
-                    }
 
-                    if (i_UserData.BestFriendsDict.ContainsKey(currUserNameAsKey))
+            try
+            {
+
+                foreach (Checkin currCheckin in i_UserData.LocalUser.Checkins)
+                {
+                    foreach (User currUser in currCheckin.TaggedUsers)
                     {
-                        i_UserData.BestFriendsDict[currUserNameAsKey] += 1;
-                    }
-                    else
-                    {
-                        i_UserData.BestFriendsDict.Add(currUserNameAsKey, 1);
+                        currUserNameAsKey = getUserFullName(currUser);
+                        if (checkIfFriendIsNotLocalUser(i_UserData.LocalUser, currUser))
+                        {
+                            continue;
+                        }
+
+                        if (i_UserData.BestFriendsDict.ContainsKey(currUserNameAsKey))
+                        {
+                            i_UserData.BestFriendsDict[currUserNameAsKey] += 1;
+                        }
+                        else
+                        {
+                            i_UserData.BestFriendsDict.Add(currUserNameAsKey, 1);
+                        }
                     }
                 }
             }
+            catch (Facebook.FacebookOAuthException e)
+            {}
         }
 
         private void getAllUserFriends(UserData i_UserData)
