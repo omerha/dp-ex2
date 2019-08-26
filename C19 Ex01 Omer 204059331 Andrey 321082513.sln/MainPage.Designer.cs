@@ -1299,7 +1299,6 @@
             // 
             // imageLargePictureBox2
             // 
-            this.imageLargePictureBox2.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.languagesBindingSource, "ImageLarge", true));
             this.imageLargePictureBox2.Location = new System.Drawing.Point(530, 3);
             this.imageLargePictureBox2.Name = "imageLargePictureBox2";
             this.imageLargePictureBox2.Size = new System.Drawing.Size(100, 116);
@@ -1553,7 +1552,6 @@
             // 
             // nameLabel13
             // 
-            this.nameLabel13.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userPostsBindingSource, "Name", true));
             this.nameLabel13.Location = new System.Drawing.Point(369, 60);
             this.nameLabel13.Name = "nameLabel13";
             this.nameLabel13.Size = new System.Drawing.Size(200, 23);
