@@ -51,6 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppLogic.cs" />
+    <Compile Include="TopPagesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopPagesForm.Designer.cs">
+      <DependentUpon>TopPagesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopFriendsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TopPagesForm.resx">
+      <DependentUpon>TopPagesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Album.datasource" />
     <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Event.datasource" />
