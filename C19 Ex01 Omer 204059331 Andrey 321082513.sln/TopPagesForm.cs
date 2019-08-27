@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FacebookApp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
 {
     public partial class TopPagesForm : Form
     {
-        public TopPagesForm()
+        public TopPagesForm(UserData i_UserData)
         {
             InitializeComponent();
         }

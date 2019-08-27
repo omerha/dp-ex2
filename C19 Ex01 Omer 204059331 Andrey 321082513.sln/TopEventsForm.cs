@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
 {
-    public partial class TopFriendsForm : Form
+    public partial class TopEventsForm : Form
     {
-        public TopFriendsForm(UserData i_UserData)
+        public TopEventsForm(UserData i_UserData)
         {
             InitializeComponent();
         }
 
-        private void topFriendsListbox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+   
     }
 }

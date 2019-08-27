@@ -33,10 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Facebook">
-      <HintPath>..\..\..\..\Downloads\01_FB01_BasicFacebookFeatures.V6.8.0.18\01_FB01_BasicFacebookFeatures.V6.8.0.18\FBApi\Facebook.dll</HintPath>
+      <HintPath>..\..\..\01_FB01_BasicFacebookFeatures.V6.8.0.18\FBApi\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="FbGraphApiWrapper">
-      <HintPath>..\..\..\..\Downloads\01_FB01_BasicFacebookFeatures.V6.8.0.18\01_FB01_BasicFacebookFeatures.V6.8.0.18\FBApi\FbGraphApiWrapper.dll</HintPath>
+      <HintPath>..\..\..\01_FB01_BasicFacebookFeatures.V6.8.0.18\FBApi\FbGraphApiWrapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,6 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppLogic.cs" />
+    <Compile Include="TopEventsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopEventsForm.Designer.cs">
+      <DependentUpon>TopEventsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopPagesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="StoreToken.cs" />
     <Compile Include="TopWantedItemFormFactory.cs" />
     <Compile Include="UserData.cs" />
+    <EmbeddedResource Include="TopEventsForm.resx">
+      <DependentUpon>TopEventsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TopFriendsForm.resx">
       <DependentUpon>TopFriendsForm.cs</DependentUpon>
     </EmbeddedResource>
