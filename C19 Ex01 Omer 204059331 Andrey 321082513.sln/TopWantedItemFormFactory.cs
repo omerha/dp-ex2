@@ -7,7 +7,10 @@ using System.Windows.Forms;
 
 namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
 {
-    public interface ITopWantedItemForm { }
+    public interface ITopWantedItemForm
+    {
+        void GetData(AppLogic i_AppLogic);
+    }
     public static class TopWantedItemFormFactory
     {
         public static ITopWantedItemForm Build(string i_WantedItem, UserData i_UserData)

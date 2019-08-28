@@ -17,6 +17,10 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
             InitializeComponent();
         }
 
+        public void GetData(AppLogic i_AppLogic)
+        {
+        }
+
         private void topFriendsListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
