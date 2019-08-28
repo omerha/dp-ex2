@@ -56,8 +56,8 @@ namespace FacebookApp
             else
             {
                 LoginResult = FacebookService.Login(
-                    //"753926335063958",
-                    "1450160541956417",
+                     "753926335063958",
+                    //"1450160541956417",
                     "public_profile",
                     "email",
                     "publish_to_groups",
@@ -325,5 +325,29 @@ namespace FacebookApp
         {
             m_StoreToken.SaveLogin(string.Empty, r_TokenFileName);
         }
+
+        public List<Event> GetTopNumberEvents(UserData i_UserData, int i_NumOfTopEventsToReturn = 5)
+        {
+            List<Event> res = null;
+            if (i_NumOfTopEventsToReturn <= i_UserData.UserEvents.Count)
+            {
+             res = i_UserData.UserEvents.OrderBy(currEvent => currEvent.AttendingUsers).Take(i_NumOfTopEventsToReturn).ToList();
+            }
+
+            return res;
+        }
+
+        public List<Page> GetTopNumberPages(UserData i_UserData, int i_NumOfTopPagessToReturn = 5)
+        {
+            List<Page> res = null;
+            if (i_NumOfTopPagessToReturn <= i_UserData.UserPages.Count)
+            {
+                res = i_UserData.UserPages.OrderBy(currEvent => currEvent.LikesCount).Take(i_NumOfTopPagessToReturn).ToList();
+            }
+
+            return res;
+        }
+
+
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
 {
-    public partial class TopEventsForm : Form
+    public partial class TopEventsForm : Form, ITopWantedItemForm
     {
         public TopEventsForm(UserData i_UserData)
         {
