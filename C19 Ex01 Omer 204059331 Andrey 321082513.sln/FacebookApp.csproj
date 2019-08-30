@@ -51,24 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppLogic.cs" />
-    <Compile Include="TopEventsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TopEventsForm.Designer.cs">
-      <DependentUpon>TopEventsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TopPagesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TopPagesForm.Designer.cs">
-      <DependentUpon>TopPagesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TopFriendsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TopFriendsForm.Designer.cs">
-      <DependentUpon>TopFriendsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,14 +60,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoreToken.cs" />
-    <Compile Include="TopWantedItemFormFactory.cs" />
+    <Compile Include="TopEventsForUser.cs" />
+    <Compile Include="TopFriendsForUser.cs" />
+    <Compile Include="TopPagesForUser.cs" />
+    <Compile Include="TopWantedItemFactory.cs" />
     <Compile Include="UserData.cs" />
-    <EmbeddedResource Include="TopEventsForm.resx">
-      <DependentUpon>TopEventsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TopFriendsForm.resx">
-      <DependentUpon>TopFriendsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,9 +78,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TopPagesForm.resx">
-      <DependentUpon>TopPagesForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Album.datasource" />
     <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Event.datasource" />

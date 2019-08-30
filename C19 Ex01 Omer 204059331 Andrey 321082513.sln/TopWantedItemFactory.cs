@@ -7,25 +7,25 @@ using System.Windows.Forms;
 
 namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
 {
-    public interface ITopWantedItemForm
+    public interface ITopWantedItem
     {
-        void GetData(AppLogic i_AppLogic);
+        void GetData(AppLogic i_AppLogic, UserData i_UserData);
     }
-    public static class TopWantedItemFormFactory
+    public static class TopWantedItemFactory
     {
-        public static ITopWantedItemForm Build(string i_WantedItem, UserData i_UserData)
+        public static ITopWantedItem Build(string i_WantedItem, UserData i_UserData, AppLogic i_AppLogic)
         {
-            ITopWantedItemForm res = null;
+            ITopWantedItem res = null;
             switch (i_WantedItem)
             {
                 case "Top friends":
-                    res = new TopFriendsForm(i_UserData);
+                    res = new TopFriendsForUser();
                     break;
                 case "Top events":
-                    res = new TopEventsForm(i_UserData);
+                    res = new TopEventsForUser();
                     break;
                 case "Top pages":
-                    res = new TopPagesForm(i_UserData);
+                    res = new TopPagesForUser();
                     break;
                 default:
                     break;
