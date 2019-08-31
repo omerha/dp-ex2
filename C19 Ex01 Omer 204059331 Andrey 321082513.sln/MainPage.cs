@@ -30,8 +30,8 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
                 userPostsBindingSource.DataSource = i_User.UserStatusList;
                 friendsBindingSource.DataSource = i_User.UserFriendsList;
                 eventsCreatedBindingSource.DataSource = i_User.UserEvents;
-                languagesBindingSource.DataSource = i_User.UserPages;
-                bestFriendsBindingSource.DataSource = i_User.BestFriendsDict;
+               // languagesBindingSource.DataSource = i_User.UserPages;
+               // bestFriendsBindingSource.DataSource = i_User.BestFriendsDict;
             }
         }
 
@@ -89,18 +89,7 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
 
         private void buttonPostOnAllFriends_Click(object sender, EventArgs e)
         {
-            foreach (User currUser in m_UserData.UserFriendsList)
-            {
-                try
-                {
-                    m_AppLogic.PostStatus(textBoxPostStatus.Text, currUser);
-                }
-                catch(Exception)
-                {
-                    MessageBox.Show("There was error trying to post status");
-                    break;
-                }
-            }
+           MessageBox.Show(m_AppLogic.PostStatusToAllFriendsAdapter(m_UserData, textBoxPostStatus.Text));
         }
 
         private void buttonLogInOut_Click(object sender, EventArgs e)
