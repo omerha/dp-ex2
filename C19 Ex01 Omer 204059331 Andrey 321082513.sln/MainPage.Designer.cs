@@ -32,12 +32,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label birthdayLabel;
-            System.Windows.Forms.Label captionLabel;
-            System.Windows.Forms.Label createdTimeLabel;
-            System.Windows.Forms.Label messageLabel;
-            System.Windows.Forms.Label nameLabel2;
-            System.Windows.Forms.Label nameLabel4;
-            System.Windows.Forms.Label messageLabel1;
             System.Windows.Forms.Label aboutLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label label2;
@@ -70,25 +64,28 @@
             System.Windows.Forms.Label label19;
             System.Windows.Forms.Label label20;
             System.Windows.Forms.Label label21;
-            System.Windows.Forms.Label nameLabel15;
-            System.Windows.Forms.Label label22;
-            System.Windows.Forms.Label label23;
-            System.Windows.Forms.Label label24;
+            System.Windows.Forms.Label messageLabel1;
+            System.Windows.Forms.Label nameLabel4;
+            System.Windows.Forms.Label captionLabel;
+            System.Windows.Forms.Label createdTimeLabel;
+            System.Windows.Forms.Label messageLabel;
+            System.Windows.Forms.Label nameLabel2;
             this.panelPageOwner = new System.Windows.Forms.Panel();
             this.userBirthday = new System.Windows.Forms.Label();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userImage = new System.Windows.Forms.PictureBox();
             this.userName = new System.Windows.Forms.Label();
             this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mainListBox = new System.Windows.Forms.ListBox();
             this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelMainPosts = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.commentsListBox = new System.Windows.Forms.ListBox();
             this.commentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.targetUsersListBox = new System.Windows.Forms.ListBox();
             this.likedByBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.captionLabel1 = new System.Windows.Forms.Label();
+            this.mainListBox = new System.Windows.Forms.ListBox();
             this.createdTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.nameLabel3 = new System.Windows.Forms.Label();
@@ -175,30 +172,23 @@
             this.tabPhotos = new System.Windows.Forms.TabPage();
             this.tabBFriends = new System.Windows.Forms.TabPage();
             this.panelBestFriends = new System.Windows.Forms.Panel();
-            this.listBoxBestFriends = new System.Windows.Forms.ListBox();
-            this.bestFriendsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.languagesListBox1 = new System.Windows.Forms.ListBox();
-            this.likedPagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupsListBox = new System.Windows.Forms.ListBox();
-            this.groupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userListBox1 = new System.Windows.Forms.ListBox();
-            this.friendsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.imageLargePictureBox3 = new System.Windows.Forms.PictureBox();
-            this.nameLabel16 = new System.Windows.Forms.Label();
+            this.labelTopTitle = new System.Windows.Forms.Label();
+            this.listBoxTops = new System.Windows.Forms.ListBox();
+            this.buttonTopPages = new System.Windows.Forms.Button();
+            this.buttonTopEvents = new System.Windows.Forms.Button();
+            this.buttonTopFriends = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.buttonPostStatusOnAllFriendsWall = new System.Windows.Forms.Button();
+            this.bestFriendsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.likedPagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.friendsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.buttonLogInOut = new System.Windows.Forms.Button();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.pageSetupDialog2 = new System.Windows.Forms.PageSetupDialog();
             this.likedByBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             nameLabel = new System.Windows.Forms.Label();
             birthdayLabel = new System.Windows.Forms.Label();
-            captionLabel = new System.Windows.Forms.Label();
-            createdTimeLabel = new System.Windows.Forms.Label();
-            messageLabel = new System.Windows.Forms.Label();
-            nameLabel2 = new System.Windows.Forms.Label();
-            nameLabel4 = new System.Windows.Forms.Label();
-            messageLabel1 = new System.Windows.Forms.Label();
             aboutLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -231,16 +221,19 @@
             label19 = new System.Windows.Forms.Label();
             label20 = new System.Windows.Forms.Label();
             label21 = new System.Windows.Forms.Label();
-            nameLabel15 = new System.Windows.Forms.Label();
-            label22 = new System.Windows.Forms.Label();
-            label23 = new System.Windows.Forms.Label();
-            label24 = new System.Windows.Forms.Label();
+            messageLabel1 = new System.Windows.Forms.Label();
+            nameLabel4 = new System.Windows.Forms.Label();
+            captionLabel = new System.Windows.Forms.Label();
+            createdTimeLabel = new System.Windows.Forms.Label();
+            messageLabel = new System.Windows.Forms.Label();
+            nameLabel2 = new System.Windows.Forms.Label();
             this.panelPageOwner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
             this.panelMainPosts.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.likedByBindingSource)).BeginInit();
             this.panelProfile.SuspendLayout();
@@ -286,7 +279,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageLargePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.likedByBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -307,60 +299,6 @@
             birthdayLabel.Size = new System.Drawing.Size(48, 13);
             birthdayLabel.TabIndex = 2;
             birthdayLabel.Text = "Birthday:";
-            // 
-            // captionLabel
-            // 
-            captionLabel.AutoSize = true;
-            captionLabel.Location = new System.Drawing.Point(271, 75);
-            captionLabel.Name = "captionLabel";
-            captionLabel.Size = new System.Drawing.Size(46, 13);
-            captionLabel.TabIndex = 0;
-            captionLabel.Text = "Caption:";
-            // 
-            // createdTimeLabel
-            // 
-            createdTimeLabel.AutoSize = true;
-            createdTimeLabel.Location = new System.Drawing.Point(271, 140);
-            createdTimeLabel.Name = "createdTimeLabel";
-            createdTimeLabel.Size = new System.Drawing.Size(73, 13);
-            createdTimeLabel.TabIndex = 2;
-            createdTimeLabel.Text = "Created Time:";
-            // 
-            // messageLabel
-            // 
-            messageLabel.AutoSize = true;
-            messageLabel.Location = new System.Drawing.Point(271, 177);
-            messageLabel.Name = "messageLabel";
-            messageLabel.Size = new System.Drawing.Size(53, 13);
-            messageLabel.TabIndex = 6;
-            messageLabel.Text = "Message:";
-            // 
-            // nameLabel2
-            // 
-            nameLabel2.AutoSize = true;
-            nameLabel2.Location = new System.Drawing.Point(271, 98);
-            nameLabel2.Name = "nameLabel2";
-            nameLabel2.Size = new System.Drawing.Size(38, 13);
-            nameLabel2.TabIndex = 8;
-            nameLabel2.Text = "Name:";
-            // 
-            // nameLabel4
-            // 
-            nameLabel4.AutoSize = true;
-            nameLabel4.Location = new System.Drawing.Point(271, 235);
-            nameLabel4.Name = "nameLabel4";
-            nameLabel4.Size = new System.Drawing.Size(35, 13);
-            nameLabel4.TabIndex = 11;
-            nameLabel4.Text = "Likes:";
-            // 
-            // messageLabel1
-            // 
-            messageLabel1.AutoSize = true;
-            messageLabel1.Location = new System.Drawing.Point(271, 305);
-            messageLabel1.Name = "messageLabel1";
-            messageLabel1.Size = new System.Drawing.Size(59, 13);
-            messageLabel1.TabIndex = 12;
-            messageLabel1.Text = "Comments:";
             // 
             // aboutLabel
             // 
@@ -649,41 +587,59 @@
             label21.TabIndex = 30;
             label21.Text = "Tags:";
             // 
-            // nameLabel15
+            // messageLabel1
             // 
-            nameLabel15.AutoSize = true;
-            nameLabel15.Location = new System.Drawing.Point(411, 159);
-            nameLabel15.Name = "nameLabel15";
-            nameLabel15.Size = new System.Drawing.Size(38, 13);
-            nameLabel15.TabIndex = 27;
-            nameLabel15.Text = "Name:";
+            messageLabel1.AutoSize = true;
+            messageLabel1.Location = new System.Drawing.Point(271, 305);
+            messageLabel1.Name = "messageLabel1";
+            messageLabel1.Size = new System.Drawing.Size(59, 13);
+            messageLabel1.TabIndex = 12;
+            messageLabel1.Text = "Comments:";
             // 
-            // label22
+            // nameLabel4
             // 
-            label22.AutoSize = true;
-            label22.Location = new System.Drawing.Point(411, 198);
-            label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(44, 13);
-            label22.TabIndex = 29;
-            label22.Text = "Friends:";
+            nameLabel4.AutoSize = true;
+            nameLabel4.Location = new System.Drawing.Point(271, 235);
+            nameLabel4.Name = "nameLabel4";
+            nameLabel4.Size = new System.Drawing.Size(35, 13);
+            nameLabel4.TabIndex = 11;
+            nameLabel4.Text = "Likes:";
             // 
-            // label23
+            // captionLabel
             // 
-            label23.AutoSize = true;
-            label23.Location = new System.Drawing.Point(412, 256);
-            label23.Name = "label23";
-            label23.Size = new System.Drawing.Size(44, 13);
-            label23.TabIndex = 30;
-            label23.Text = "Groups:";
+            captionLabel.AutoSize = true;
+            captionLabel.Location = new System.Drawing.Point(271, 75);
+            captionLabel.Name = "captionLabel";
+            captionLabel.Size = new System.Drawing.Size(46, 13);
+            captionLabel.TabIndex = 0;
+            captionLabel.Text = "Caption:";
             // 
-            // label24
+            // createdTimeLabel
             // 
-            label24.AutoSize = true;
-            label24.Location = new System.Drawing.Point(411, 320);
-            label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(69, 13);
-            label24.TabIndex = 31;
-            label24.Text = "Liked Pages:";
+            createdTimeLabel.AutoSize = true;
+            createdTimeLabel.Location = new System.Drawing.Point(271, 140);
+            createdTimeLabel.Name = "createdTimeLabel";
+            createdTimeLabel.Size = new System.Drawing.Size(73, 13);
+            createdTimeLabel.TabIndex = 2;
+            createdTimeLabel.Text = "Created Time:";
+            // 
+            // messageLabel
+            // 
+            messageLabel.AutoSize = true;
+            messageLabel.Location = new System.Drawing.Point(271, 177);
+            messageLabel.Name = "messageLabel";
+            messageLabel.Size = new System.Drawing.Size(53, 13);
+            messageLabel.TabIndex = 6;
+            messageLabel.Text = "Message:";
+            // 
+            // nameLabel2
+            // 
+            nameLabel2.AutoSize = true;
+            nameLabel2.Location = new System.Drawing.Point(271, 98);
+            nameLabel2.Name = "nameLabel2";
+            nameLabel2.Size = new System.Drawing.Size(38, 13);
+            nameLabel2.TabIndex = 8;
+            nameLabel2.Text = "Name:";
             // 
             // panelPageOwner
             // 
@@ -733,41 +689,38 @@
             // 
             this.eventBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Event);
             // 
-            // mainListBox
-            // 
-            this.mainListBox.DataSource = this.postBindingSource;
-            this.mainListBox.DisplayMember = "Message";
-            this.mainListBox.FormattingEnabled = true;
-            this.mainListBox.Location = new System.Drawing.Point(3, 59);
-            this.mainListBox.Name = "mainListBox";
-            this.mainListBox.Size = new System.Drawing.Size(247, 277);
-            this.mainListBox.TabIndex = 6;
-            this.mainListBox.ValueMember = "Name";
-            // 
             // postBindingSource
             // 
             this.postBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Post);
             // 
             // panelMainPosts
             // 
-            this.panelMainPosts.Controls.Add(this.label7);
-            this.panelMainPosts.Controls.Add(this.commentsListBox);
-            this.panelMainPosts.Controls.Add(this.targetUsersListBox);
-            this.panelMainPosts.Controls.Add(messageLabel1);
-            this.panelMainPosts.Controls.Add(nameLabel4);
-            this.panelMainPosts.Controls.Add(captionLabel);
-            this.panelMainPosts.Controls.Add(this.captionLabel1);
-            this.panelMainPosts.Controls.Add(this.mainListBox);
-            this.panelMainPosts.Controls.Add(createdTimeLabel);
-            this.panelMainPosts.Controls.Add(this.createdTimeDateTimePicker);
-            this.panelMainPosts.Controls.Add(messageLabel);
-            this.panelMainPosts.Controls.Add(this.messageTextBox);
-            this.panelMainPosts.Controls.Add(nameLabel2);
-            this.panelMainPosts.Controls.Add(this.nameLabel3);
+            this.panelMainPosts.Controls.Add(this.panel2);
             this.panelMainPosts.Location = new System.Drawing.Point(7, 6);
             this.panelMainPosts.Name = "panelMainPosts";
-            this.panelMainPosts.Size = new System.Drawing.Size(627, 351);
+            this.panelMainPosts.Size = new System.Drawing.Size(627, 368);
             this.panelMainPosts.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.commentsListBox);
+            this.panel2.Controls.Add(this.targetUsersListBox);
+            this.panel2.Controls.Add(messageLabel1);
+            this.panel2.Controls.Add(nameLabel4);
+            this.panel2.Controls.Add(captionLabel);
+            this.panel2.Controls.Add(this.captionLabel1);
+            this.panel2.Controls.Add(this.mainListBox);
+            this.panel2.Controls.Add(createdTimeLabel);
+            this.panel2.Controls.Add(this.createdTimeDateTimePicker);
+            this.panel2.Controls.Add(messageLabel);
+            this.panel2.Controls.Add(this.messageTextBox);
+            this.panel2.Controls.Add(nameLabel2);
+            this.panel2.Controls.Add(this.nameLabel3);
+            this.panel2.Location = new System.Drawing.Point(0, 9);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(627, 351);
+            this.panel2.TabIndex = 9;
             // 
             // label7
             // 
@@ -817,6 +770,17 @@
             this.captionLabel1.Name = "captionLabel1";
             this.captionLabel1.Size = new System.Drawing.Size(152, 23);
             this.captionLabel1.TabIndex = 1;
+            // 
+            // mainListBox
+            // 
+            this.mainListBox.DataSource = this.postBindingSource;
+            this.mainListBox.DisplayMember = "Message";
+            this.mainListBox.FormattingEnabled = true;
+            this.mainListBox.Location = new System.Drawing.Point(3, 59);
+            this.mainListBox.Name = "mainListBox";
+            this.mainListBox.Size = new System.Drawing.Size(247, 277);
+            this.mainListBox.TabIndex = 6;
+            this.mainListBox.ValueMember = "Name";
             // 
             // createdTimeDateTimePicker
             // 
@@ -1617,106 +1581,84 @@
             this.tabBFriends.Name = "tabBFriends";
             this.tabBFriends.Size = new System.Drawing.Size(640, 405);
             this.tabBFriends.TabIndex = 5;
-            this.tabBFriends.Text = "Best Friends";
+            this.tabBFriends.Text = "TOP";
             this.tabBFriends.UseVisualStyleBackColor = true;
             // 
             // panelBestFriends
             // 
-            this.panelBestFriends.Controls.Add(this.listBoxBestFriends);
-            this.panelBestFriends.Controls.Add(label24);
-            this.panelBestFriends.Controls.Add(this.languagesListBox1);
-            this.panelBestFriends.Controls.Add(label23);
-            this.panelBestFriends.Controls.Add(this.groupsListBox);
-            this.panelBestFriends.Controls.Add(label22);
-            this.panelBestFriends.Controls.Add(this.userListBox1);
-            this.panelBestFriends.Controls.Add(this.imageLargePictureBox3);
-            this.panelBestFriends.Controls.Add(nameLabel15);
-            this.panelBestFriends.Controls.Add(this.nameLabel16);
+            this.panelBestFriends.Controls.Add(this.labelTopTitle);
+            this.panelBestFriends.Controls.Add(this.listBoxTops);
+            this.panelBestFriends.Controls.Add(this.buttonTopPages);
+            this.panelBestFriends.Controls.Add(this.buttonTopEvents);
+            this.panelBestFriends.Controls.Add(this.buttonTopFriends);
             this.panelBestFriends.Controls.Add(this.label13);
             this.panelBestFriends.Location = new System.Drawing.Point(7, 3);
             this.panelBestFriends.Name = "panelBestFriends";
             this.panelBestFriends.Size = new System.Drawing.Size(808, 381);
             this.panelBestFriends.TabIndex = 0;
             // 
-            // listBoxBestFriends
+            // labelTopTitle
             // 
-            this.listBoxBestFriends.DataSource = this.bestFriendsBindingSource;
-            this.listBoxBestFriends.DisplayMember = "Name";
-            this.listBoxBestFriends.FormattingEnabled = true;
-            this.listBoxBestFriends.Location = new System.Drawing.Point(11, 50);
-            this.listBoxBestFriends.Name = "listBoxBestFriends";
-            this.listBoxBestFriends.Size = new System.Drawing.Size(262, 316);
-            this.listBoxBestFriends.TabIndex = 35;
+            this.labelTopTitle.AutoSize = true;
+            this.labelTopTitle.Font = new System.Drawing.Font("Aharoni", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTopTitle.Location = new System.Drawing.Point(396, 55);
+            this.labelTopTitle.Name = "labelTopTitle";
+            this.labelTopTitle.Size = new System.Drawing.Size(38, 19);
+            this.labelTopTitle.TabIndex = 31;
+            this.labelTopTitle.Text = "Top";
             // 
-            // bestFriendsBindingSource
+            // listBoxTops
             // 
-            this.bestFriendsBindingSource.DataMember = "Friends";
-            this.bestFriendsBindingSource.DataSource = this.userBindingSource;
+            this.listBoxTops.FormattingEnabled = true;
+            this.listBoxTops.Location = new System.Drawing.Point(324, 86);
+            this.listBoxTops.Name = "listBoxTops";
+            this.listBoxTops.Size = new System.Drawing.Size(258, 264);
+            this.listBoxTops.TabIndex = 29;
             // 
-            // languagesListBox1
+            // buttonTopPages
             // 
-            this.languagesListBox1.DataSource = this.likedPagesBindingSource;
-            this.languagesListBox1.DisplayMember = "Category";
-            this.languagesListBox1.FormattingEnabled = true;
-            this.languagesListBox1.Location = new System.Drawing.Point(489, 323);
-            this.languagesListBox1.Name = "languagesListBox1";
-            this.languagesListBox1.Size = new System.Drawing.Size(119, 56);
-            this.languagesListBox1.TabIndex = 30;
-            this.languagesListBox1.ValueMember = "AccessToken";
+            this.buttonTopPages.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
+            this.buttonTopPages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.buttonTopPages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTopPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTopPages.Location = new System.Drawing.Point(26, 270);
+            this.buttonTopPages.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonTopPages.Name = "buttonTopPages";
+            this.buttonTopPages.Size = new System.Drawing.Size(208, 56);
+            this.buttonTopPages.TabIndex = 30;
+            this.buttonTopPages.Text = "Find Top Pages";
+            this.buttonTopPages.UseVisualStyleBackColor = true;
+            this.buttonTopPages.Click += new System.EventHandler(this.buttonTopPages_Click);
             // 
-            // likedPagesBindingSource
+            // buttonTopEvents
             // 
-            this.likedPagesBindingSource.DataMember = "LikedPages";
-            this.likedPagesBindingSource.DataSource = this.bestFriendsBindingSource;
+            this.buttonTopEvents.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
+            this.buttonTopEvents.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.buttonTopEvents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTopEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTopEvents.Location = new System.Drawing.Point(26, 179);
+            this.buttonTopEvents.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonTopEvents.Name = "buttonTopEvents";
+            this.buttonTopEvents.Size = new System.Drawing.Size(208, 56);
+            this.buttonTopEvents.TabIndex = 28;
+            this.buttonTopEvents.Text = "Find Top events";
+            this.buttonTopEvents.UseVisualStyleBackColor = true;
+            this.buttonTopEvents.Click += new System.EventHandler(this.buttonTopEvents_Click);
             // 
-            // groupsListBox
+            // buttonTopFriends
             // 
-            this.groupsListBox.DataSource = this.groupsBindingSource;
-            this.groupsListBox.DisplayMember = "IconUrl";
-            this.groupsListBox.FormattingEnabled = true;
-            this.groupsListBox.Location = new System.Drawing.Point(489, 260);
-            this.groupsListBox.Name = "groupsListBox";
-            this.groupsListBox.Size = new System.Drawing.Size(119, 56);
-            this.groupsListBox.TabIndex = 29;
-            this.groupsListBox.ValueMember = "Description";
-            // 
-            // groupsBindingSource
-            // 
-            this.groupsBindingSource.DataMember = "Groups";
-            this.groupsBindingSource.DataSource = this.bestFriendsBindingSource;
-            // 
-            // userListBox1
-            // 
-            this.userListBox1.DataSource = this.friendsBindingSource1;
-            this.userListBox1.DisplayMember = "Birthday";
-            this.userListBox1.FormattingEnabled = true;
-            this.userListBox1.Location = new System.Drawing.Point(489, 200);
-            this.userListBox1.Name = "userListBox1";
-            this.userListBox1.Size = new System.Drawing.Size(119, 56);
-            this.userListBox1.TabIndex = 28;
-            this.userListBox1.ValueMember = "About";
-            // 
-            // friendsBindingSource1
-            // 
-            this.friendsBindingSource1.DataMember = "Friends";
-            this.friendsBindingSource1.DataSource = this.bestFriendsBindingSource;
-            // 
-            // imageLargePictureBox3
-            // 
-            this.imageLargePictureBox3.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.bestFriendsBindingSource, "ImageLarge", true));
-            this.imageLargePictureBox3.Location = new System.Drawing.Point(445, 15);
-            this.imageLargePictureBox3.Name = "imageLargePictureBox3";
-            this.imageLargePictureBox3.Size = new System.Drawing.Size(130, 115);
-            this.imageLargePictureBox3.TabIndex = 26;
-            this.imageLargePictureBox3.TabStop = false;
-            // 
-            // nameLabel16
-            // 
-            this.nameLabel16.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bestFriendsBindingSource, "Name", true));
-            this.nameLabel16.Location = new System.Drawing.Point(486, 159);
-            this.nameLabel16.Name = "nameLabel16";
-            this.nameLabel16.Size = new System.Drawing.Size(100, 23);
-            this.nameLabel16.TabIndex = 28;
+            this.buttonTopFriends.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
+            this.buttonTopFriends.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.buttonTopFriends.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTopFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTopFriends.Location = new System.Drawing.Point(26, 90);
+            this.buttonTopFriends.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonTopFriends.Name = "buttonTopFriends";
+            this.buttonTopFriends.Size = new System.Drawing.Size(208, 56);
+            this.buttonTopFriends.TabIndex = 27;
+            this.buttonTopFriends.Text = "Find Top friends";
+            this.buttonTopFriends.UseVisualStyleBackColor = true;
+            this.buttonTopFriends.Click += new System.EventHandler(this.buttonTopFriends_Click);
             // 
             // label13
             // 
@@ -1724,9 +1666,9 @@
             this.label13.Font = new System.Drawing.Font("Aharoni", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(6, 7);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(175, 26);
+            this.label13.Size = new System.Drawing.Size(101, 26);
             this.label13.TabIndex = 19;
-            this.label13.Text = "BEST FRIENDS";
+            this.label13.Text = "Find Top";
             // 
             // buttonPostStatusOnAllFriendsWall
             // 
@@ -1742,6 +1684,26 @@
             this.buttonPostStatusOnAllFriendsWall.Text = "Post Status on all your friends wall";
             this.buttonPostStatusOnAllFriendsWall.UseVisualStyleBackColor = true;
             this.buttonPostStatusOnAllFriendsWall.Click += new System.EventHandler(this.buttonPostOnAllFriends_Click);
+            // 
+            // bestFriendsBindingSource
+            // 
+            this.bestFriendsBindingSource.DataMember = "Friends";
+            this.bestFriendsBindingSource.DataSource = this.userBindingSource;
+            // 
+            // likedPagesBindingSource
+            // 
+            this.likedPagesBindingSource.DataMember = "LikedPages";
+            this.likedPagesBindingSource.DataSource = this.bestFriendsBindingSource;
+            // 
+            // groupsBindingSource
+            // 
+            this.groupsBindingSource.DataMember = "Groups";
+            this.groupsBindingSource.DataSource = this.bestFriendsBindingSource;
+            // 
+            // friendsBindingSource1
+            // 
+            this.friendsBindingSource1.DataMember = "Friends";
+            this.friendsBindingSource1.DataSource = this.bestFriendsBindingSource;
             // 
             // buttonLogInOut
             // 
@@ -1786,7 +1748,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
             this.panelMainPosts.ResumeLayout(false);
-            this.panelMainPosts.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.likedByBindingSource)).EndInit();
             this.panelProfile.ResumeLayout(false);
@@ -1840,7 +1803,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageLargePictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.likedByBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1852,18 +1814,11 @@
         private System.Windows.Forms.PictureBox userImage;
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.BindingSource eventBindingSource;
-        private System.Windows.Forms.ListBox mainListBox;
         private System.Windows.Forms.Label userBirthday;
         private System.Windows.Forms.Panel panelMainPosts;
         private System.Windows.Forms.BindingSource commentsBindingSource;
         private System.Windows.Forms.BindingSource likedByBindingSource;
         private System.Windows.Forms.BindingSource postBindingSource;
-        private System.Windows.Forms.Label captionLabel1;
-        private System.Windows.Forms.DateTimePicker createdTimeDateTimePicker;
-        private System.Windows.Forms.TextBox messageTextBox;
-        private System.Windows.Forms.Label nameLabel3;
-        private System.Windows.Forms.ListBox targetUsersListBox;
-        private System.Windows.Forms.ListBox commentsListBox;
         private System.Windows.Forms.TextBox textBoxPostStatus;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonPost;
@@ -1909,7 +1864,6 @@
         private System.Windows.Forms.TabPage tabPages;
         private System.Windows.Forms.TabPage tabPhotos;
         private System.Windows.Forms.TabPage tabBFriends;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
@@ -1918,7 +1872,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panelBestFriends;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.BindingSource userPostsBindingSource;
         private System.Windows.Forms.ListBox commentsListBox1;
         private System.Windows.Forms.BindingSource commentsBindingSource1;
@@ -1954,15 +1907,24 @@
         private System.Windows.Forms.Label messageLabel4;
         private System.Windows.Forms.Label nameLabel6;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBoxBestFriends;
         private System.Windows.Forms.BindingSource bestFriendsBindingSource;
-        private System.Windows.Forms.ListBox languagesListBox1;
         private System.Windows.Forms.BindingSource likedPagesBindingSource;
-        private System.Windows.Forms.ListBox groupsListBox;
         private System.Windows.Forms.BindingSource groupsBindingSource;
-        private System.Windows.Forms.ListBox userListBox1;
         private System.Windows.Forms.BindingSource friendsBindingSource1;
-        private System.Windows.Forms.PictureBox imageLargePictureBox3;
-        private System.Windows.Forms.Label nameLabel16;
+        private System.Windows.Forms.ListBox listBoxTops;
+        private System.Windows.Forms.Button buttonTopPages;
+        private System.Windows.Forms.Button buttonTopEvents;
+        private System.Windows.Forms.Button buttonTopFriends;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox commentsListBox;
+        private System.Windows.Forms.ListBox targetUsersListBox;
+        private System.Windows.Forms.Label captionLabel1;
+        private System.Windows.Forms.ListBox mainListBox;
+        private System.Windows.Forms.DateTimePicker createdTimeDateTimePicker;
+        private System.Windows.Forms.TextBox messageTextBox;
+        private System.Windows.Forms.Label nameLabel3;
+        private System.Windows.Forms.Label labelTopTitle;
     }
 }
