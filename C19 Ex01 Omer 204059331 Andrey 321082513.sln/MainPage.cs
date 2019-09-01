@@ -26,11 +26,11 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
         {
             if (i_User != null)
             {
-                postBindingSource.DataSource = i_User.UserNewsFeed;
+                /*postBindingSource.DataSource = i_User.UserNewsFeed;
                 userPostsBindingSource.DataSource = i_User.UserStatusList;
                 friendsBindingSource.DataSource = i_User.UserFriendsList;
                 eventsCreatedBindingSource.DataSource = i_User.UserEvents;
-                languagesBindingSource.DataSource = i_User.UserPages;
+                languagesBindingSource.DataSource = i_User.UserPages;*/
                 bestFriendsBindingSource.DataSource = i_User.BestFriendsDict;
             }
         }
@@ -42,7 +42,6 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
                 userImage.Image = i_ToShow.LocalUser.ImageLarge;
                 userName.Text = i_ToShow.LocalUser.Name;
                 userBirthday.Text = i_ToShow.LocalUser.Birthday;
-
             }
         }
 

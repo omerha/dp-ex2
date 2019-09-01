@@ -173,8 +173,9 @@ namespace FacebookApp
 
         public void FetchUserData(UserData i_UserData)
         {
-            ThreadStart starter = new ThreadStart(()=>getAllUserFriends(i_UserData));
-            starter += () => {
+            ThreadStart starter = new ThreadStart(() => getAllUserFriends(i_UserData));
+            starter += () =>
+            {
                 getAllTaggedFriendsFromCheckins(i_UserData);
                 getAllTaggedFriendsFromPhotos(i_UserData);
             };
@@ -262,7 +263,6 @@ namespace FacebookApp
                             {
                                 continue;
                             }
-
                         }
                     }
                 }
@@ -276,10 +276,8 @@ namespace FacebookApp
         private void getAllTaggedFriendsFromCheckins(UserData i_UserData)
         {
             string currUserNameAsKey = string.Empty;
-
             try
             {
-
                 foreach (Checkin currCheckin in i_UserData.LocalUser.Checkins)
                 {
                     foreach (User currUser in currCheckin.TaggedUsers)
@@ -302,7 +300,9 @@ namespace FacebookApp
                 }
             }
             catch (Facebook.FacebookOAuthException)
-            {}
+            {
+                System.Console.WriteLine("Facebook auth error");
+            }
         }
 
         private void getAllUserFriends(UserData i_UserData)

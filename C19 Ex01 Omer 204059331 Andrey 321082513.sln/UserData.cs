@@ -14,55 +14,142 @@ namespace FacebookApp
         private List<Post> m_NewsFeed;
         public List<Post> NewsFeed
         {
-            get { if (m_NewsFeed == null) { FetchNewsFeed(); }; return m_NewsFeed; }
+            get
+            {
+                if (m_NewsFeed == null)
+                {
+                    FetchNewsFeed();
+                }
+
+                return m_NewsFeed;
+            }
         }
 
-        public Image ImageLarge { get { return LocalUser.ImageLarge; } }
-        public string Birthday { get { return LocalUser.Birthday; } }
-        public string Name { get { return LocalUser.Name; } }
-        public string FirstName { get { return LocalUser.FirstName; } }
-        public string LastName { get { return LocalUser.LastName; } }
+        public Image ImageLarge
+        {
+            get
+            {
+                return LocalUser.ImageLarge;
+            }
+        }
+
+        public string Birthday
+        {
+            get
+            {
+                return LocalUser.Birthday;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return LocalUser.Name;
+            }
+        }
+
+        public string FirstName {
+            get
+            {
+                return LocalUser.FirstName;
+            }
+        }
+
+        public string LastName {
+            get
+            {
+                return LocalUser.LastName;
+            }
+        }
 
         private List<User> m_Friends;
         public List<User> Friends
         {
-            get { if (m_Friends == null) { FetchFriends(); }; return m_Friends; }
+            get {
+                if (m_Friends == null)
+                {
+                    FetchFriends();
+                }
+
+                return m_Friends;
+            }
         }
+
         private List<Album> m_Albums;
         public List<Album> Albums
         {
-            get { if (m_Albums == null) { FetchAlbums(); }; return m_Albums; }
+            get
+            {
+                if (m_Albums == null)
+                {
+                    FetchAlbums();
+                }
+
+                return m_Albums;
+            }
         }
+
         private List<Status> m_Statuses;
         public List<Status> Statuses
         {
-            get { if (m_Statuses == null) { FetchStatuses(); }; return m_Statuses; }
+            get
+            {
+                if (m_Statuses == null)
+                {
+                    FetchStatuses();
+                }
+
+                return m_Statuses;
+            }
         }
 
         public User LocalUser { get; set; }
 
         private List<Checkin> m_Checkins;
+
         public List<Checkin> Checkins
         {
-            get { if (m_Checkins == null) { FetchCheckins(); }; return m_Checkins; }
+            get
+            {
+                if (m_Checkins == null)
+                {
+                    FetchCheckins();
+                }
+                return m_Checkins;
+            }
         }
 
         public List<Page> m_Pages;
         public List<Page> Pages
         {
-            get { if (m_Pages == null) { FetchPages(); }; return m_Pages; }
+            get
+            {
+                if (m_Pages == null)
+                {
+                    FetchPages();
+                }
+
+                return m_Pages;
+            }
         }
 
         public List<Event> m_Events;
         public List<Event> Events
         {
-            get { if (m_Events == null) { FetchEvents(); }; return m_Events; }
-        }
+            get
+            {
+                if (m_Events == null)
+                {
+                    FetchEvents();
+                }
 
+                return m_Events;
+            }
+        }
 
         public UserData(User i_User)
         {
-
             LocalUser = i_User;
             BestFriendsDict = new Dictionary<string, int>();
             //UserFriendsList = new List<User>();
@@ -88,8 +175,6 @@ namespace FacebookApp
             }
         }
 
-
-
         public void FetchFriends()
         {
             if (m_Friends == null)
@@ -102,8 +187,6 @@ namespace FacebookApp
                 }
             }
         }
-
-
 
         public void FetchAlbums()
         {
@@ -121,8 +204,6 @@ namespace FacebookApp
             }
         }
 
-
-
         public void FetchStatuses()
         {
             if (m_Statuses == null)
@@ -134,8 +215,6 @@ namespace FacebookApp
                 }
             }
         }
-
-
 
         public void FetchCheckins()
         {
@@ -158,7 +237,6 @@ namespace FacebookApp
             }
         }
 
-
         public void FetchEvents()
         {
             if (m_Events == null)
@@ -170,7 +248,6 @@ namespace FacebookApp
                 }
             }
         }
-
 
         public void FetchPages()
         {
@@ -188,7 +265,6 @@ namespace FacebookApp
                 { }
             }
         }
-
 
         public Dictionary<string, int> OrderDictByValueInt(Dictionary<string, int> i_Dict)
         {
