@@ -26,12 +26,12 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
         {
             if (i_User != null)
             {
-                /*postBindingSource.DataSource = i_User.UserNewsFeed;
-                userPostsBindingSource.DataSource = i_User.UserStatusList;
-                friendsBindingSource.DataSource = i_User.UserFriendsList;
-                eventsCreatedBindingSource.DataSource = i_User.UserEvents;
-                languagesBindingSource.DataSource = i_User.UserPages;*/
-                bestFriendsBindingSource.DataSource = i_User.BestFriendsDict;
+                postBindingSource.DataSource = i_User.NewsFeed;
+                userPostsBindingSource.DataSource = i_User.Statuses;
+                friendsBindingSource.DataSource = i_User.Friends;
+                eventsCreatedBindingSource.DataSource = i_User.Events;
+                //languagesBindingSource.DataSource = i_User.Pages;
+                //bestFriendsBindingSource.DataSource = i_User.BestFriendsDict;
             }
         }
 
