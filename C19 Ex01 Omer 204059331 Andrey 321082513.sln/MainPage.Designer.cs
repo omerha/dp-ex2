@@ -133,7 +133,6 @@
             this.userPostsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelPage = new System.Windows.Forms.Panel();
-            this.listBoxPages = new System.Windows.Forms.ListBox();
             this.postsListBox = new System.Windows.Forms.ListBox();
             this.wallPostsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkinsListBox = new System.Windows.Forms.ListBox();
@@ -187,6 +186,7 @@
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.pageSetupDialog2 = new System.Windows.Forms.PageSetupDialog();
             this.likedByBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nameListBox = new System.Windows.Forms.ListBox();
             nameLabel = new System.Windows.Forms.Label();
             birthdayLabel = new System.Windows.Forms.Label();
             aboutLabel = new System.Windows.Forms.Label();
@@ -1192,7 +1192,7 @@
             // 
             // panelPage
             // 
-            this.panelPage.Controls.Add(this.listBoxPages);
+            this.panelPage.Controls.Add(this.nameListBox);
             this.panelPage.Controls.Add(label18);
             this.panelPage.Controls.Add(this.postsListBox);
             this.panelPage.Controls.Add(label17);
@@ -1208,18 +1208,8 @@
             this.panelPage.Controls.Add(this.label11);
             this.panelPage.Location = new System.Drawing.Point(7, 7);
             this.panelPage.Name = "panelPage";
-            this.panelPage.Size = new System.Drawing.Size(629, 381);
+            this.panelPage.Size = new System.Drawing.Size(650, 398);
             this.panelPage.TabIndex = 19;
-            // 
-            // listBoxPages
-            // 
-            this.listBoxPages.DataSource = this.languagesBindingSource;
-            this.listBoxPages.DisplayMember = "Name";
-            this.listBoxPages.FormattingEnabled = true;
-            this.listBoxPages.Location = new System.Drawing.Point(21, 52);
-            this.listBoxPages.Name = "listBoxPages";
-            this.listBoxPages.Size = new System.Drawing.Size(262, 316);
-            this.listBoxPages.TabIndex = 34;
             // 
             // postsListBox
             // 
@@ -1726,6 +1716,15 @@
             this.likedByBindingSource1.DataMember = "LikedBy";
             this.likedByBindingSource1.DataSource = this.userPostsBindingSource;
             // 
+            // nameListBox
+            // 
+            this.nameListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.likedPagesBindingSource, "Name", true));
+            this.nameListBox.FormattingEnabled = true;
+            this.nameListBox.Location = new System.Drawing.Point(26, 66);
+            this.nameListBox.Name = "nameListBox";
+            this.nameListBox.Size = new System.Drawing.Size(278, 290);
+            this.nameListBox.TabIndex = 35;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1886,7 +1885,6 @@
         private System.Windows.Forms.ListBox listBoxUserPosts;
         private System.Windows.Forms.ListBox listBoxFriends;
         private System.Windows.Forms.ListBox listBoxEvents;
-        private System.Windows.Forms.ListBox listBoxPages;
         private System.Windows.Forms.ListBox postsListBox;
         private System.Windows.Forms.BindingSource wallPostsBindingSource;
         private System.Windows.Forms.ListBox checkinsListBox;
@@ -1926,5 +1924,6 @@
         private System.Windows.Forms.TextBox messageTextBox;
         private System.Windows.Forms.Label nameLabel3;
         private System.Windows.Forms.Label labelTopTitle;
+        private System.Windows.Forms.ListBox nameListBox;
     }
 }

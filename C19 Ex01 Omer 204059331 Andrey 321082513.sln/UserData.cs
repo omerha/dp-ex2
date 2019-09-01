@@ -152,12 +152,6 @@ namespace FacebookApp
         {
             LocalUser = i_User;
             BestFriendsDict = new Dictionary<string, int>();
-            //UserFriendsList = new List<User>();
-            //NonEmptyAlbumsList = new List<Album>();
-            //Statuses = new List<Status>();
-            //UserNewsFeed = new List<Post>();
-            //UserEvents = new List<Event>();
-            //UserPages = new List<Page>();
         }
 
         public void FetchNewsFeed()
