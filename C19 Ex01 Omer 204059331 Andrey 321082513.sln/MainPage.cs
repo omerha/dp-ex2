@@ -111,6 +111,28 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
             }
         }
 
-    
+        private void buttonTopFriends_Click(object sender, EventArgs e)
+        {
+            TopFriendsForUser top = TopWantedItemFactory.Build("Top friends", m_UserData, m_AppLogic) as TopFriendsForUser;
+            listBoxTops.DisplayMember = "Name";
+            listBoxTops.DataSource = top.TopList;
+            labelTopTitle.Text = "Top friends";
+        }
+
+        private void buttonTopEvents_Click(object sender, EventArgs e)
+        {
+            TopEventsForUser top = TopWantedItemFactory.Build("Top events", m_UserData, m_AppLogic) as TopEventsForUser;
+            listBoxTops.DisplayMember = "Name";
+            listBoxTops.DataSource = top.TopList;
+            labelTopTitle.Text = "Top events";
+        }
+
+        private void buttonTopPages_Click(object sender, EventArgs e)
+        {
+            TopPagesForUser top = TopWantedItemFactory.Build("Top pages", m_UserData, m_AppLogic) as TopPagesForUser;
+            listBoxTops.DisplayMember = "Name";
+            listBoxTops.DataSource = top.TopList;
+            labelTopTitle.Text = "Top pages";
+        }
     }
 }

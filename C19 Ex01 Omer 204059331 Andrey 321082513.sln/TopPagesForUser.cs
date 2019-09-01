@@ -9,10 +9,10 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
 {
     public class TopPagesForUser : ITopWantedItem
     {
-        private List<Page> m_TopPagesForUser { get; set; }
+        public List<Page> TopList { get;set; }
         public void GetData(AppLogic i_AppLogic, UserData i_UserData)
         {
-            m_TopPagesForUser = i_AppLogic.GetTopNumberPages(i_UserData);
+            TopList = i_AppLogic.GetTopNumberPages(i_UserData);
         }
     }
 }

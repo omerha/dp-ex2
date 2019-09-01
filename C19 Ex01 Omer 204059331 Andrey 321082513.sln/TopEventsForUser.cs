@@ -9,10 +9,11 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
 {
     public class TopEventsForUser : ITopWantedItem
     {
-        private List<Event> m_TopEventsForUser { get; set; }
+        public List<Event> TopList { get; set; }
+
         public void GetData(AppLogic i_AppLogic, UserData i_UserData)
         {
-            m_TopEventsForUser = i_AppLogic.GetTopNumberEvents(i_UserData);
+            TopList = i_AppLogic.GetTopNumberEvents(i_UserData);
         }
     }
 }

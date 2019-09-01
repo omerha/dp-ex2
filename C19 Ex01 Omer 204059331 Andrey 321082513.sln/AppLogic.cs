@@ -97,7 +97,7 @@ namespace FacebookApp
         public string PostStatusToAllFriendsAdapter(UserData i_UserData, string i_StatusText)
         {
             string res = "Posted status successfully on all friends walls";
-            foreach (User currUser in i_UserData.UserFriendsList)
+            foreach (User currUser in i_UserData.Friends)
             {
                 try
                 {
@@ -117,7 +117,7 @@ namespace FacebookApp
         {
             foreach (Status currStatus in i_UserData.LocalUser.Statuses)
             {
-                i_UserData.UserStatusList.Add(currStatus);
+                i_UserData.Statuses.Add(currStatus);
             }
         }
 
@@ -127,7 +127,7 @@ namespace FacebookApp
             {
                 foreach (Post post in i_UserData.LocalUser.NewsFeed)
                 {
-                    i_UserData.UserNewsFeed.Add(post);
+                    i_UserData.NewsFeed.Add(post);
                 }
             }
         }
@@ -138,7 +138,7 @@ namespace FacebookApp
             {
                 foreach (Page page in i_UserData.LocalUser.LikedPages)
                 {
-                    i_UserData.UserPages.Add(page);
+                    i_UserData.Pages.Add(page);
                 }
             }
         }
@@ -149,7 +149,7 @@ namespace FacebookApp
             {
                 foreach (Event userEvent in i_UserData.LocalUser.Events)
                 {
-                    i_UserData.UserEvents.Add(userEvent);
+                    i_UserData.Events.Add(userEvent);
                 }
             }
         }
@@ -157,7 +157,7 @@ namespace FacebookApp
         public User FindFriendByName(string i_friendNameToFind, UserData i_UserData)
         {
             User friend = null;
-            foreach (User user in i_UserData.UserFriendsList)
+            foreach (User user in i_UserData.Friends)
             {
                     string name = user.Name.ToUpper();
 
@@ -184,7 +184,7 @@ namespace FacebookApp
             getAllUserStatus(i_UserData);
             getUserNewsFeed(i_UserData);
             getUserEvents(i_UserData);
-            getUserPages(i_UserData);
+            //getUserPages(i_UserData);
         }
 
         private void getAllTheNoEmptyAlbums(UserData i_UserData)
@@ -193,7 +193,7 @@ namespace FacebookApp
             {
                 if (album.Count != 0)
                 {
-                    i_UserData.NonEmptyAlbumsList.Add(album);
+                    i_UserData.Albums.Add(album);
                 }
             }
         }
@@ -243,24 +243,32 @@ namespace FacebookApp
 
         private void getAllTaggedFriendsFromPhotos(UserData i_UserData)
         {
-            foreach (Album currAlbum in i_UserData.NonEmptyAlbumsList)
+            foreach (Album currAlbum in i_UserData.Albums)
             {
-                foreach (Photo currPhoto in currAlbum.Photos)
+                try
                 {
-                    if (currPhoto.Tags != null)
+                    foreach (Photo currPhoto in currAlbum.Photos)
                     {
-                        try
+                        if (currPhoto.Tags != null)
                         {
-                            foreach (PhotoTag currPhotoTag in currPhoto.Tags)
+                            try
                             {
-                                collectUsersFromTag(currPhotoTag, i_UserData);
+                                foreach (PhotoTag currPhotoTag in currPhoto.Tags)
+                                {
+                                    collectUsersFromTag(currPhotoTag, i_UserData);
+                                }
                             }
-                        }
-                        catch (Facebook.FacebookOAuthException e)
-                        {
-                            continue;
+                            catch (Facebook.FacebookOAuthException)
+                            {
+                                continue;
+                            }
+
                         }
                     }
+                }
+                catch (Facebook.FacebookOAuthException)
+                {
+                    continue;
                 }
             }
         }
@@ -293,17 +301,15 @@ namespace FacebookApp
                     }
                 }
             }
-            catch (Facebook.FacebookOAuthException e)
-            {
-                System.Console.WriteLine(e.Message);
-            }
+            catch (Facebook.FacebookOAuthException)
+            {}
         }
 
         private void getAllUserFriends(UserData i_UserData)
         {
             foreach (User user in i_UserData.LocalUser.Friends)
             {
-                i_UserData.UserFriendsList.Add(user);
+                i_UserData.Friends.Add(user);
             }
         }
 
@@ -320,9 +326,9 @@ namespace FacebookApp
         public List<Event> GetTopNumberEvents(UserData i_UserData, int i_NumOfTopEventsToReturn = 5)
         {
             List<Event> res = null;
-            if (i_NumOfTopEventsToReturn <= i_UserData.UserEvents.Count)
+            if (i_NumOfTopEventsToReturn <= i_UserData.Events.Count)
             {
-             res = i_UserData.UserEvents.OrderBy(currEvent => currEvent.AttendingUsers).Take(i_NumOfTopEventsToReturn).ToList();
+             res = i_UserData.Events.OrderBy(currEvent => currEvent.AttendingUsers).Take(i_NumOfTopEventsToReturn).ToList();
             }
 
             return res;
@@ -331,9 +337,9 @@ namespace FacebookApp
         public List<Page> GetTopNumberPages(UserData i_UserData, int i_NumOfTopPagessToReturn = 5)
         {
             List<Page> res = null;
-            if (i_NumOfTopPagessToReturn <= i_UserData.UserPages.Count)
+            if (i_NumOfTopPagessToReturn <= i_UserData.Pages.Count)
             {
-                res = i_UserData.UserPages.OrderBy(currEvent => currEvent.LikesCount).Take(i_NumOfTopPagessToReturn).ToList();
+                res = i_UserData.Pages.OrderBy(currEvent => currEvent.LikesCount).Take(i_NumOfTopPagessToReturn).ToList();
             }
 
             return res;
