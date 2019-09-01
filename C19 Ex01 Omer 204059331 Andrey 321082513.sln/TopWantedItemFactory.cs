@@ -11,6 +11,7 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
     {
         void GetData(AppLogic i_AppLogic, UserData i_UserData);
     }
+
     public static class TopWantedItemFactory
     {
         public static ITopWantedItem Build(string i_WantedItem, UserData i_UserData, AppLogic i_AppLogic)
@@ -29,8 +30,8 @@ namespace C19_Ex01_Omer_204059331_Andrey_321082513.sln
                     break;
                 default:
                     break;
-
             }
+
             return res;
         }
     }

@@ -56,8 +56,8 @@ namespace FacebookApp
             else
             {
                 LoginResult = FacebookService.Login(
-                     "753926335063958",
-                    //"1450160541956417",
+                     //"753926335063958",
+                    "1450160541956417",
                     "public_profile",
                     "email",
                     "publish_to_groups",
@@ -94,7 +94,6 @@ namespace FacebookApp
             return postedStatus;
         }
 
-
         public string PostStatusToAllFriendsAdapter(UserData i_UserData, string i_StatusText)
         {
             string res = "Posted status successfully on all friends walls";
@@ -110,8 +109,10 @@ namespace FacebookApp
                     break;
                 }
             }
+
             return res;
         }
+
         private void getAllUserStatus(UserData i_UserData)
         {
             foreach (Status currStatus in i_UserData.LocalUser.Statuses)
@@ -142,7 +143,6 @@ namespace FacebookApp
             }
         }
         
-
         private void getUserEvents(UserData i_UserData)
         {
             if (i_UserData.LocalUser.Events != null)
@@ -186,16 +186,6 @@ namespace FacebookApp
             getUserEvents(i_UserData);
             getUserPages(i_UserData);
         }
-
-  /*      public void FetchUserData(UserData i_UserData)
-        {
-      
-            getAllUserFriends(i_UserData);
-            getAllTheNoEmptyAlbums(i_UserData);
-            getAllUserStatus(i_UserData);
-            getAllTaggedFriendsFromCheckins(i_UserData);
-            getAllTaggedFriendsFromPhotos(i_UserData);
-        }*/
 
         private void getAllTheNoEmptyAlbums(UserData i_UserData)
         {
@@ -270,7 +260,6 @@ namespace FacebookApp
                         {
                             continue;
                         }
-                    
                     }
                 }
             }
@@ -305,7 +294,9 @@ namespace FacebookApp
                 }
             }
             catch (Facebook.FacebookOAuthException e)
-            {}
+            {
+                System.Console.WriteLine(e.Message);
+            }
         }
 
         private void getAllUserFriends(UserData i_UserData)
@@ -347,7 +338,5 @@ namespace FacebookApp
 
             return res;
         }
-
-
     }
 }
